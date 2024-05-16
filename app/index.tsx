@@ -1,9 +1,11 @@
+
+import MealStatus from '@/src/components/MealStatus/MealStatus';
 import { theme } from '@/src/theme/theme';
 import { useFonts } from 'expo-font';
-import { PencilSimpleLine } from 'phosphor-react-native';
 import { Text, View } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
-import { Button } from '../src/components/button/Button';
+import { HomeHeader } from '../src/components/HomeHeader/HomeHeader';
+
 export default function HomeScreen() {
   const [fontsLoaded] = useFonts({
     NunitoSans_400Regular: require("../assets/fonts/NunitoSans_7pt-Regular.ttf"),
@@ -15,9 +17,9 @@ export default function HomeScreen() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <View style={{padding: 20, gap: 10}}>
-        <Button ButtonVariantions='SOLID' label="Editar" leftIcon={<PencilSimpleLine size={20} color={theme.colors.base.WHITE} />} />
-        <Button ButtonVariantions='OUTLINE' label="Editar" leftIcon={<PencilSimpleLine size={20} color={theme.colors.base.GRAY_100} />} />
+      <View style={{ padding: 24, gap: 40 }}>
+        <HomeHeader />
+        <MealStatus/>
       </View>
     </ThemeProvider>
   );

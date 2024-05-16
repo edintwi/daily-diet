@@ -7,6 +7,9 @@ declare module 'styled-components/native' {
         RED_DARK: string;
         RED_MID: string;
         RED_LIGHT: string;
+        GREEN_DARK: string;
+        GREEN_MID: string;
+        GREEN_LIGHT: string;
       };
       base: {
         GRAY_100: string;
