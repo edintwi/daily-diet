@@ -1,20 +1,30 @@
+import { theme } from "@/src/theme/theme";
 import React from "react";
-import { View } from "react-native";
+import { TouchableOpacity } from "react-native";
+import { Icon } from "../Icon/Icon";
 import {
-    MealStatusContainer,
-    MealStatusDescription,
-    MealStatusTitle
+  MealStatusContainer,
+  MealStatusDescription,
+  MealStatusTitle,
+  TextWrapper,
 } from "./style";
 
 export default function MealStatus() {
   return (
-      <MealStatusContainer $mealStatus>
-      <View style={{alignItems: "center", gap: 0}}>
+    <MealStatusContainer $mealStatus>
+      <TextWrapper>
         <MealStatusTitle> 90,86% </MealStatusTitle>
         <MealStatusDescription>
           das refeições dentro da dieta
         </MealStatusDescription>
-      </View>
+      </TextWrapper>
+      <TouchableOpacity>
+        <Icon
+          name="arrowUpRight"
+          size={24}
+          color={theme.colors.product.GREEN_DARK}
+        />
+      </TouchableOpacity>
     </MealStatusContainer>
   );
 }

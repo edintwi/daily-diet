@@ -1,4 +1,3 @@
-
 import MealStatus from '@/src/components/MealStatus/MealStatus';
 import { theme } from '@/src/theme/theme';
 import { useFonts } from 'expo-font';
@@ -19,7 +18,7 @@ export default function HomeScreen() {
     <ThemeProvider theme={theme}>
       <View style={{ padding: 24, gap: 40 }}>
         <HomeHeader />
-        <MealStatus/>
+        <MealStatus />
       </View>
     </ThemeProvider>
   );

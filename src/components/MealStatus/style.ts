@@ -9,14 +9,18 @@ export const MealStatusContainer = styled.View<{ $mealStatus: boolean }>`
       : css`
           background-color: ${props.theme.colors.product.RED_LIGHT};
         `}
-  min-height: 102px;
-  max-height: 102px;
-  border-radius: 6px;
-  align-items: center;
-  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  height: 200px;
   padding: 10px;
+  border-radius: 6px;
 `;
 
+export const TextWrapper = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
 export const MealStatusTitle = styled.Text`
   font-family: ${(props) => props.theme.fontFamily.BOLD};
   font-size: ${(props) => `${props.theme.fontSize.XXXL}px`};
@@ -28,7 +32,3 @@ export const MealStatusDescription = styled.Text`
   color: ${(props) => props.theme.colors.base.GRAY_200};
 `;
 
-export const IconNavigatorContainer = styled.TouchableOpacity`
-  flex-direction: row;
-  justify-content: space-between;
-`;
