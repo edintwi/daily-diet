@@ -1,50 +1,27 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Daily Diet App
 
-## Get started
+O daily diet app consiste em um desafio proposto pela [RocketSeat](https://www.rocketseat.com.br/) onde tive que criar um app em que o usuário possa registrar suas refeições do dia afim de manter o controle sobre a sua dieta.
 
-1. Install dependencies
+Para desenvolver o app utilizei o Expo, React Native com typescript utizando também as bibliotecas styled-components para fazer toda a estilização baseada no tema ([Figma do desafio](https://www.figma.com/design/D3IYpFsB5avKvm3jmqyggs/Daily-Diet-%E2%80%A2-Desafio-React-Native-(Community)?node-id=2773%3A9356&t=RVXpVQw1SytMPDY8-1)), React navigation para fazer toda a navegação do app e o Aync Storage para armazenar e exibir, também utilizei o React-Native-Svg para criar minha propria biblioteca de icones para o app localmente todas as refeições do usuário.
 
-   ```bash
-   npm install
-   ```
 
-2. Start the app
 
-   ```bash
-    npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+## Instalação
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Antes de rodar o app você deve clonar o repositório, apos clonar entre no repositório e instale as dependencias.
+```bash
+  cd daily-diet
+  npm install
+  ou 
+  npm i
+```
+    
+## Rodando o o APP
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Apos seguir todos os passo anteriores agora é bem simples, rode o comando para buildar o app.
 
 ```bash
-npm run reset-project
+    npx expo start
 ```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
