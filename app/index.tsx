@@ -1,4 +1,4 @@
-import { HomeScreen } from '@/src/screens/HomeScreen/HomeScreen';
+import { AppStack } from '@/src/routes/appStack';
 import { theme } from '@/src/theme/theme';
 import { useFonts } from 'expo-font';
 import { Text } from 'react-native';
@@ -10,12 +10,9 @@ export default function App() {
     NunitoSans_700Bold: require("../assets/fonts/NunitoSans_7pt-Bold.ttf"),
   });
 
-  if (!fontsLoaded) {
-    return <Text>Loading...</Text>;
-  }
   return (
     <ThemeProvider theme={theme}>
-      <HomeScreen/>
+      {fontsLoaded ? <AppStack /> : <Text>Loading...</Text>}
     </ThemeProvider>
   );
 }
