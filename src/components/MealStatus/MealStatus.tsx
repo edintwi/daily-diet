@@ -13,7 +13,7 @@ export default function MealStatus() {
   return (
     <MealStatusContainer $mealStatus>
       <TextWrapper>
-        <MealStatusTitle> 90,86% </MealStatusTitle>
+        <MealStatusTitle>90,86%</MealStatusTitle>
         <MealStatusDescription>
           das refeições dentro da dieta
         </MealStatusDescription>
