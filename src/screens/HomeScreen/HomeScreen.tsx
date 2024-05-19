@@ -4,30 +4,66 @@ import MealStatus from '@/src/components/MealStatus/MealStatus';
 import { Button } from '@/src/components/button/Button';
 import { theme } from '@/src/theme/theme';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { FlatList, ListRenderItemInfo, View } from 'react-native';
+import { UserMeals, mealMock } from "./mealMock";
+import {
+  FoodCard,
+  FoodTextContainer,
+  FoodTextSeparator,
+  IsDeit,
+  ListMealContainer,
+  ListTitle,
+  MealDateTitle,
+  MealFoodText,
+} from "./style";
 
 export function HomeScreen() {
-  return (
-    <View style={{ padding: 24, gap: 40 }}>
-      <HomeHeader />
-      <MealStatus />
-      <View style={{ gap: 10 }}>
-        <Text
-          style={{
-            fontFamily: theme.fontFamily.REGULAR,
-            fontSize: theme.fontSize.LG,
-          }}
-        >
-          Refeições
-        </Text>
-        <Button
-          ButtonVariantions="SOLID"
-          label="Nova refeição"
-          leftIcon={
-            <Icon name="plusIcon" size={24} color={theme.colors.base.WHITE} />
-          }
-        />
+
+  function ListHeader() {
+    return (
+      <View style={{ gap: 40, marginBottom: 20 }}>
+        <HomeHeader />
+        <MealStatus />
+        <View style={{gap: 10}}>
+          <ListTitle>Refeições</ListTitle>
+          <Button
+            ButtonVariantions="SOLID"
+            label="Nova refeição"
+            leftIcon={
+              <Icon name="plusIcon" size={24} color={theme.colors.base.WHITE} />
+            }
+          />
+        </View>
       </View>
+    );
+  }
+ function renderItem({ item }: ListRenderItemInfo<UserMeals>) {
+     return (
+       <ListMealContainer>
+         <MealDateTitle>{item.date}</MealDateTitle>
+         {item.meals.map((meal) => (
+           <FoodCard>
+             <FoodTextContainer>
+               <MealFoodText $foodInfoType="TIME">{meal.time}</MealFoodText>
+               <FoodTextSeparator/>
+               <MealFoodText $foodInfoType="NAME">{meal.name}</MealFoodText>
+             </FoodTextContainer>
+
+             <IsDeit $isDiet={meal.isDiet} />
+           </FoodCard>
+         ))}
+       </ListMealContainer>
+     );
+   }
+  return (
+    <View style={{ padding: 24 }}>
+      <FlatList
+        data={mealMock}
+        ListHeaderComponent={ListHeader}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.date}
+        showsVerticalScrollIndicator={false}
+      />
     </View>
   );
 }
