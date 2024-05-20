@@ -16,8 +16,9 @@ export const MealStatusContainer = styled.View<{
   ${(props) =>
     props.$expanse ?
     css`
-      height: 150px;
+      height: 20%;
       align-items: center;
+      border-radius: 0;
       `
       : css`
     height: 100px;`}
