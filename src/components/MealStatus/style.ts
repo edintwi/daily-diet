@@ -1,6 +1,10 @@
 import styled, { css } from "styled-components/native";
 
-export const MealStatusContainer = styled.View<{ $mealStatus: boolean }>`
+export const MealStatusContainer = styled.View<{
+  $mealStatus: boolean;
+  $expanse?: boolean;
+}>`
+  align-items: center;
   ${(props) =>
     props.$mealStatus
       ? css`
@@ -9,9 +13,17 @@ export const MealStatusContainer = styled.View<{ $mealStatus: boolean }>`
       : css`
           background-color: ${props.theme.colors.product.RED_LIGHT};
         `}
+  ${(props) =>
+    props.$expanse ?
+    css`
+      height: 150px;
+      align-items: center;
+      `
+      : css`
+    height: 100px;`}
+
   flex-direction: row;
   width: 100%;
-  height: 100px;
   padding: 10px;
   border-radius: 6px;
 `;
@@ -31,4 +43,3 @@ export const MealStatusDescription = styled.Text`
   font-size: ${(props) => `${props.theme.fontSize.MD}px`};
   color: ${(props) => props.theme.colors.base.GRAY_200};
 `;
-

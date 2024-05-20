@@ -1,3 +1,4 @@
+import { ArrowLeftIcon } from "@/src/assets/icons/ArrowLeftIcon";
 import { ArrowUpRightIcon } from "@/src/assets/icons/ArrowUpRightIcon";
 import { PencilSimpleLineIcon } from "@/src/assets/icons/PencilSimpleLineIcon";
 import { PlusIcon } from "@/src/assets/icons/PlusIcon";
@@ -41,6 +42,7 @@ const iconRegistry = {
     pencilSimpleLine: PencilSimpleLineIcon,
     plusIcon: PlusIcon,
     trashIcon: TrashIcon,
+    arrowLeft: ArrowLeftIcon,
 };
 
 type IconType = typeof iconRegistry;
