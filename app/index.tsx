@@ -1,9 +1,8 @@
-import { AppStack } from '@/src/routes/appStack';
-import { theme } from '@/src/theme/theme';
-import { useFonts } from 'expo-font';
-import { StatusBar } from 'expo-status-bar';
-import { Text } from 'react-native';
-import { ThemeProvider } from 'styled-components/native';
+import { AppStack } from "@/src/routes/appStack";
+import { theme } from "@/src/theme/theme";
+import { useFonts } from "expo-font";
+import { StatusBar, Text } from "react-native";
+import { ThemeProvider } from "styled-components/native";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -14,7 +13,11 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       {fontsLoaded ? <AppStack /> : <Text>Loading...</Text>}
-      <StatusBar style="dark" translucent backgroundColor="transparent"/>
+      <StatusBar
+        backgroundColor="transparent"
+        translucent
+        barStyle={"dark-content"}
+      />
     </ThemeProvider>
   );
 }
