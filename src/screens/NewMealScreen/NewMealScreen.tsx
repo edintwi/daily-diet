@@ -2,6 +2,8 @@ import SelectButton from "@/src/components/SelectButton/SelectButton";
 import { TextInput } from "@/src/components/TextInput/TextInput";
 import { TopBar } from "@/src/components/TopBar/TopBar";
 import { Button } from "@/src/components/button/Button";
+import { AppStackParamsList } from "@/src/routes/appStack";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React, { useState } from "react";
 import { View } from "react-native";
 import {
@@ -11,10 +13,14 @@ import {
   SelectTitle,
 } from "./style";
 
-export default function NewMealScreen() {
+type Props = NativeStackScreenProps<AppStackParamsList, "NewMealScreen">;
+
+export default function NewMealScreen({ navigation }: Props) {
   const [statusSelected, setStatus] = useState("");
 
-  function handleAddMeal() {}
+  function handleAddMeal() {
+    navigation.navigate("FeedbackScreen", { isDiet: false });
+  }
 
   return (
     <Container>
