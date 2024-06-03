@@ -24,7 +24,7 @@ export default function NewMealScreen({ navigation }: Props) {
 
   return (
     <Container>
-      <TopBar />
+      <TopBar title="Nova refeição" />
       <FormFiledsContainer>
         <TextInput label="Nome" />
         <TextInput label="Descrição" isTextArea />

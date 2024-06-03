@@ -49,7 +49,7 @@ export function HomeScreen({ route, navigation }: Props) {
       <ListMealContainer>
         <MealDateTitle>{item.date}</MealDateTitle>
         {item.meals.map((meal) => (
-          <FoodCard>
+          <FoodCard onPress={() => navigation.navigate("MealDetailsScreen")}>
             <FoodTextContainer>
               <MealFoodText $foodInfoType="TIME">{meal.time}</MealFoodText>
               <FoodTextSeparator />

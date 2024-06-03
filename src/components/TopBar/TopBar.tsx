@@ -4,7 +4,11 @@ import { TouchableOpacity, View } from "react-native";
 import { Icon } from "../Icon/Icon";
 import { TopBarContainer, TopBarTitle } from "./style";
 
-export function TopBar() {
+interface TopBarProps {
+  title: string;
+}
+
+export function TopBar({ title }: TopBarProps) {
   const navigation = useNavigation();
 
   return (
@@ -12,7 +16,7 @@ export function TopBar() {
       <TouchableOpacity onPress={navigation.goBack}>
         <Icon name="arrowLeft" size={24} />
       </TouchableOpacity>
-      <TopBarTitle>Nova Refeição</TopBarTitle>
+      <TopBarTitle>{title}</TopBarTitle>
       <View></View>
     </TopBarContainer>
   );
